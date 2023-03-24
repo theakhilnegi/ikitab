@@ -30,12 +30,10 @@ router.post(
     try {
       let user = await User.findOne({ email: req.body.email });
       if (user) {
-        return res
-          .status(400)
-          .json({
-            success,
-            error: "This email has been used. Please enter a unique email",
-          });
+        return res.status(400).json({
+          success,
+          error: "This email has been used. Please enter a unique email",
+        });
       }
 
       // this is to add salt to has generated passwrd
@@ -55,7 +53,7 @@ router.post(
       res.json({ success, authtoken });
     } catch (error) {
       console.log(error.message);
-      res.send(500).send("Internal Server Error");
+      res.sendStatus(500).send("Internal Server Error");
     }
   }
 );

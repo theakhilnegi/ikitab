@@ -1,3 +1,5 @@
+use "npm run both" in /ikitab/ instead of running two servers
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
